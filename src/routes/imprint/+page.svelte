@@ -3,6 +3,15 @@
 	import Pager from "../../components/heroes/Pager.svelte";
 
 </script>
+<svelte:head>
+    <title>
+        Impressum - teamspiel GmbH
+    </title>
+    <meta
+        name="description"
+        content="Impressum der teamspiel GmbH."
+    />
+</svelte:head>
 <Pager title="Impressum" />
 
 <div class="relative md:py-24 py-16">

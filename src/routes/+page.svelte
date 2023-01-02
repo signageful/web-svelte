@@ -5,7 +5,11 @@
 
 </script>
 <svelte:head>
-    <title>Signageful</title>
+    <title>Signageful Kiosk Screens</title>
+    <meta
+        name="description"
+        content="Ihr Screen und unsere Software. Wir bieten Ihnen die passende Lösung für Ihre Kiosk Screens."
+    />
 
     <style>
         #top-nav.at-top {

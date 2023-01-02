@@ -1,8 +1,16 @@
 <script>
-    import { Obfuscate } from "svelte-obfuscate"
 	import Pager from "../../components/heroes/Pager.svelte";
 
 </script>
+<svelte:head>
+    <title>
+        Datenschutzerklärung - teamspiel GmbH
+    </title>
+    <meta
+        name="description"
+        content="Datenverarbeitung durch teamspiel GmbH."
+    />
+</svelte:head>
 <Pager title="Unsere Datenschutzerklärung" />
 
 <div class="relative md:py-24 py-16">

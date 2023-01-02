@@ -2,6 +2,14 @@
 	import Pager from "../../../components/heroes/Pager.svelte";
 
 </script>
+<svelte:head>
+    <title>Digitale Anzeigesysteme für Bildungseinrichtungen - Optimierte Kommunikation und Informationsvermittlung</title>
+    <meta
+        name="description"
+        content="Digital Signage oder Infodisplays revolutionieren die Kommunikation und Informationsvermittlung an Schulen und Universitäten. Sie bieten eine moderne und zeitgemäße Möglichkeit, wichtige Informationen an Schüler, Lehrer und Mitarbeiter zu vermitteln. Digitale Anzeigesysteme sind flexibel, umweltfreundlich und einfach zu verwalten, wodurch sie die ideale Wahl für Bildungseinrichtungen darstellen."
+    />
+</svelte:head>
+
 <Pager title="Digitale Anzeigesysteme für Bildungseinrichtungen" description="Digital Signage oder Infodisplays revolutionieren die Kommunikation und Informationsvermittlung an Schulen und Universitäten. Sie bieten eine moderne und zeitgemäße Möglichkeit, wichtige Informationen an Schüler, Lehrer und Mitarbeiter zu vermitteln." />
 
 <div class="relative md:py-24 py-16">

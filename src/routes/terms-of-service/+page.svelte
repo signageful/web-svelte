@@ -3,6 +3,16 @@
 	import Pager from "../../components/heroes/Pager.svelte";
 
 </script>
+<svelte:head>
+    <title>
+        Allgemeine Geschäftsbedingungen (AGB) der teamspiel GmbH
+    </title>
+    <meta
+        name="description"
+        content="Allgemeine Geschäftsbedingungen (AGB) der teamspiel GmbH"
+    />
+</svelte:head>
+
 <Pager title="Allgemeine Geschäftsbedingungen (AGB) der teamspiel GmbH" />
 
 <div class="relative md:py-24 py-16">

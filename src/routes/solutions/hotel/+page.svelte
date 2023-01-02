@@ -2,6 +2,13 @@
 	import Pager from "../../../components/heroes/Pager.svelte";
 
 </script>
+<svelte:head>
+    <title>Digital Signage für Hotels und Gastronomie: Mehr Aufmerksamkeit und Umsatz</title>
+    <meta
+        name="description"
+        content="Nutzen Sie die Vorteile von Digital Signage in der Hotel- und Gastronomiebranche, um Ihre Gäste zu informieren und zu unterhalten. Mit bewegten Bildern, Videos und interaktiven Inhalten können Sie Ihre Kunden fesseln und ihr Interesse wecken. Digital Signage bietet auch eine schnelle und flexible Möglichkeit, Ihre Marketing- und Kommunikationsstrategie anzupassen, um Ihren Umsatz zu steigern."
+    />
+</svelte:head>
 <Pager title="Digital Signage in der Hotel- und Gastronomiebranche" description="Digital Signage bietet Hotels und Gastronomiebetrieben eine moderne und zeitgemäße Möglichkeit, ihre Angebote zu präsentieren und die Aufmerksamkeit der Gäste zu erhöhen. Mit bewegten Bildern, Videos und interaktiven Inhalten können sie ihre Kunden fesseln und ihr Interesse wecken. Zudem ermöglicht Digital Signage eine schnelle und flexible Aktualisierung der Inhalte, wodurch sich die Marketing- und Kommunikationsstrategie effizient anpassen lässt. Nutzen Sie die Vorteile von Digital Signage und steigern Sie Ihren Umsatz in der Hotel- und Gastronomiebranche." />
 
 <div class="relative md:py-24 py-16">
