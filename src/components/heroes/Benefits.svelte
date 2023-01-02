@@ -11,7 +11,7 @@
     class="relative md:py-24 py-16 bg-center bg-no-repeat"
     style="background-image: url({bgImage})"
 >
-    <div class="absolute inset-0 bg-primary-600/90" />
+    <div class="absolute inset-0 bg-slate-900/80 " />
     <div class="max-w-6xl mx-auto relative">
         <div class="grid grid-cols-1 pb-8 text-center justify-center items-center">
             <h3 class="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-medium text-white">{title}</h3>

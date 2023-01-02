@@ -10,10 +10,10 @@
 </svelte:head>
 <Pager title="Effiziente Kommunikation in Arztpraxen" description="Digitale Anzeigesysteme verbessern die Kommunikation in Arztpraxen. Sie eignen sich für die Anzeige von Wartezeiten, Sonderaktionen und wichtigen Hinweisen und tragen zur Optimierung des Ablaufs und zur Steigerung der Patientenzufriedenheit bei." />
 
-<div class="relative md:py-24 py-16">
+<div class="relative md:py-24 py-16 bg-white">
     <div class="max-w-2xl mx-auto relative w-full">
         <div class="md:flex">
-            <div class="p-6 bg-white dark:bg-slate-900 dark:text-white shadow dark:shadow-gray-800 rounded-md prose dark:prose-invert w-full">
+            <div class="p-6 bg-white  shadow  rounded-md prose w-full">
                 <p>
               Digital Infodisplays in Arztpraxen bieten eine effektive
               Möglichkeit, wichtige Informationen an Patienten und Mitarbeiter

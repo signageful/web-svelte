@@ -13,7 +13,6 @@
 
     <style>
         #top-nav.at-top {
-            background: transparent!important;
             border: none!important;
         }
         @media (min-width: 768px) {
