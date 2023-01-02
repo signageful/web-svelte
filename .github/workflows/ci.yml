@@ -51,18 +51,3 @@ jobs:
           REMOTE_HOST: ${{ secrets.HOST }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: /home/teamspiel/apps/signageful-web
-
-      # - name: Deploy using ssh
-      #   uses: appleboy/ssh-action@master
-      #   with:
-      #     host: ${{ secrets.HOST }}
-      #     username: ${{ secrets.USERNAME }}
-      #     key: ${{ secrets.PRIVATE_KEY }}
-      #     port: 22
-      #     script: |
-      #       cd /home/signageful-web/apps/signageful-web
-      #       git pull origin main
-      #       git status
-      #       npm i
-      #       npm run build --if-present
-      #       npm test
