@@ -58,6 +58,13 @@ import type { MenuItem } from './menu.types';
                     <Navitem item={item} />
                 {/each}
             </ul>
+            <div class="flex items-center ml-4">
+                <a href="https://app.signageful.com" title="Zum CMS"
+                    class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md whitespace-nowrap text-gray-700 bg-white hover:bg-primary-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors duration-200"
+                >
+                    Zum CMS
+                </a>
+            </div>
         </div>
     </div>
 </nav>
