@@ -1,5 +1,5 @@
 <script>
-	import Pager from "../../../components/heroes/Pager.svelte";
+	import Pager from "../../components/heroes/Pager.svelte";
 
 </script>
 <svelte:head>

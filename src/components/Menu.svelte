@@ -10,15 +10,15 @@ import type { MenuItem } from './menu.types';
             children: [
                 {
                     title: 'Schule & Bildung',
-                    href: '/solutions/schools',
+                    href: '/solutions-bildungswesen',
                 },
                 {
                     title: "Arztpraxis",
-                    href: "/solutions/doctor",
+                    href: "/solutions-medizin",
                 },
                 {
                     title: "Hotel & Gastronomie",
-                    href: "/solutions/hotel",
+                    href: "/solutions-gastronomie",
                 }
             ],
         },
@@ -33,7 +33,7 @@ import type { MenuItem } from './menu.types';
     }
 </script>
 <svelte:window on:scroll={handleScroll} />
-<nav bind:this={navRef}  id="top-nav" class="print:hidden w-full px-4 z-50 at-top bg-primary-600">
+<nav bind:this={navRef}  id="top-nav" class="print:hidden w-full px-4 z-50 at-top bg-primary-600 text-white">
     <div class="max-w-6xl 2xl:max-w-8xl flex items-center justify-between mx-auto print:hidden relative">
         <div class="flex flex-row">
             <a id="logo" class="logo" href="/">
