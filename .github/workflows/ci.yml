@@ -3,9 +3,9 @@ name: CI
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -20,7 +20,7 @@ jobs:
 
       - name: Install playwright browsers
         run: npx playwright install --with-deps
-      
+
   deploy:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
@@ -47,7 +47,7 @@ jobs:
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-          ARGS: "-rltgoDzvO --delete"
+          ARGS: '-rltgoDzvO --delete'
           REMOTE_HOST: ${{ secrets.HOST }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: /home/teamspiel/apps/signageful-web

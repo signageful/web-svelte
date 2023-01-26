@@ -1,3 +1,1 @@
-<div>
-    Demo!
-</div>
+<div>Demo!</div>

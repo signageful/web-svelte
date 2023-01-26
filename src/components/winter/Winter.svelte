@@ -1,5 +1,5 @@
 <script lang="ts">
-import Snow from "./Snow.svelte";
+	import Snow from './Snow.svelte';
 </script>
 
 <Snow />

@@ -71,6 +71,6 @@ server {
 
 ```bash
 sudo ln -s /etc/nginx/sites-available/signageful.com /etc/nginx/sites-enabled/signageful.com
-sudo nginx -t 
+sudo nginx -t
 sudo systemctl restart nginx
 ```

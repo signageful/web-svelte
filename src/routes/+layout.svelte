@@ -1,23 +1,23 @@
 <script>
-  import 'virtual:fonts.css'
-  import "../app.css";
-  import Header from "../components/header/Header.svelte";
-  import Footer from "../components/Footer.svelte";
-  import Winter from "../components/winter/Winter.svelte";
+	import 'virtual:fonts.css';
+	import '../app.css';
+	import Header from '../components/header/Header.svelte';
+	import Footer from '../components/Footer.svelte';
+	import Winter from '../components/winter/Winter.svelte';
 
+	export let isWinter = false;
 
-  export let isWinter = false;
-
-  // should render <Winter /> in Winter months
-    const month = new Date().getMonth();
-    if (month === 11 || month === 0 || month === 1) {
-      isWinter = true;
-    }
+	// should render <Winter /> in Winter months
+	const month = new Date().getMonth();
+	if (month === 11 || month === 0 || month === 1) {
+		isWinter = true;
+	}
 </script>
+
 <Header />
 <slot />
 <Footer />
 
 {#if isWinter}
-  <Winter />
+	<Winter />
 {/if}

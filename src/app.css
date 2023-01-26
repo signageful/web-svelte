@@ -2,33 +2,32 @@
 @tailwind components;
 
 .nav-item {
-    @apply inline-block text-sm font-bold h-16 px-4 relative no-underline;
-    z-index: 1;
+	@apply inline-block text-sm font-bold h-16 px-4 relative no-underline;
+	z-index: 1;
 }
 
 .sub-nav-item {
-    @apply font-normal ml-2;
+	@apply font-normal ml-2;
 
-    @apply md:items-center md:bg-white md:rounded-lg md:ring-1 md:ring-black md:ring-opacity-5;
-    @apply md:p-3 md:absolute md:top-[64px] md:z-50;
+	@apply md:items-center md:bg-white md:rounded-lg md:ring-1 md:ring-black md:ring-opacity-5;
+	@apply md:p-3 md:absolute md:top-[64px] md:z-50;
 }
 
 .sub-nav-item a {
-    @apply md:items-start md:rounded-md md:flex md:font-normal md:py-2 md:px-3;
+	@apply md:items-start md:rounded-md md:flex md:font-normal md:py-2 md:px-3;
 }
 
 .sub-nav-item a:hover {
-    @apply bg-slate-100;
+	@apply bg-slate-100;
 }
 
 .logo {
-    @apply mr-4;
-    padding: 0 6px;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 68px;
-    letter-spacing: 1px;
+	@apply mr-4;
+	padding: 0 6px;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 68px;
+	letter-spacing: 1px;
 }
-
 
 @tailwind utilities;
