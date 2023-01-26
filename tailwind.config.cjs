@@ -5,19 +5,26 @@ module.exports = {
     darkMode: 'class',
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
+    fontFamily: {
+        sans: ['Questrial', 'sans-serif'],
+    },
     extend: {
+        height: {
+            nav: 80,
+            splash: 'calc(100vh - 80px)',
+        },
         colors: {
             primary: {
-                "50": "#EBEFFA",
-                "100": "#C6D1F1",
-                "200": "#A1B4E7",
-                "300": "#7D97DE",
-                "400": "#587AD5",
-                "500": "#335CCC",
-                "600": "#294AA3",
-                "700": "#1F377A",
-                "800": "#142552",
-                "900": "#0A1229"
+                '50': '#eef8ff',
+                '100': '#dcf0ff',
+                '200': '#b2e3ff',
+                '300': '#6dcdff',
+                '400': '#20b3ff',
+                '500': '#009aff',
+                '600': '#0079df',
+                '700': '#0060b4',
+                '800': '#005294',
+                '900': '#003866',
             },
             dark: "#192132",
             body: colors.slate[900],

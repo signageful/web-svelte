@@ -6,7 +6,7 @@
 </script>
 
 <section class="relative md:py-24 py-16 bg-white">
-    <div class="max-w-6xl mx-auto relative">
+    <div class="max-w-7xl mx-auto relative">
         <div class="grid md:grid-cols-2 grid-cols-1 gap-[30px]">
             {#each questions as  question}
                 <div class="flex">

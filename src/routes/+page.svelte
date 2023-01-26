@@ -1,7 +1,7 @@
 <script>
 	import Questionaire from "../components/heroes/Questionaire.svelte";
     import Benefits from "../components/heroes/Benefits.svelte";
-    import HeroOne from "../components/heroes/HeroOne.svelte"
+    import billboardImg from "../assets/billboard.jpg";
 
 </script>
 <svelte:head>
@@ -22,16 +22,24 @@
         }
     </style>
 </svelte:head>
-<HeroOne>
-    <span slot="title">
-        Digital Signage <br /> für mehr <br />Aufmerksamkeit.
-    </span>
-    <span slot="description">
-        Digital Signage von unserer Agentur für dynamische Inhalte
-                    auf digitalen Bildschirmen. Einfache Aktualisierung und
-                    vielfältige Einsatzmöglichkeiten.
-    </span>
-</HeroOne>
+<section class="flex relative w-full md:py-20 py-16 bg-white h-screen overflow-hidden">
+    <div class="max-w-7xl w-full mx-auto flex items-center">
+        <div class="grid w-full grid-cols-2 text-left">
+            <div>
+                <h1 class="max-w-md font-semibold text-4xl lg:text-6xl text-black  mb-5">
+                    <span class="block text-white">Signageful</span>
+                    The Platform for Digital Signage
+                </h1>
+                <div class="max-w-md mb-7 text-slate-600 font-medium">
+                    Signageful ist ein benutzerfreundliches Content Management System (CMS) für Digital Signage Monitore. Mit unserer Lösung können Sie einfach und flexibel Inhalte auf Ihren Monitoren verwalten und anzeigen lassen. Erstellen Sie Kampagnen, planen Sie die Anzeigezeiten und steuern Sie mehrere Monitore aus einer zentralen Plattform heraus.
+                </div>
+            </div>
+            <div class="flex items-center justify-center">
+                <img class="rounded-lg overflow-hidden w-full h-auto max-w-full object-cover" alt="Billboard in City" src="{billboardImg}" />
+            </div>
+        </div>
+    </div>
+</section>
 <Benefits
     title="Nutzen Sie das volle Potential Ihres Digital Signage"
     description="Mit unserem Digital Signage CMS können Sie das volle Potential

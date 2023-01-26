@@ -12,7 +12,7 @@
     style="background-image: url({bgImage})"
 >
     <div class="absolute inset-0 bg-slate-900/80 " />
-    <div class="max-w-6xl mx-auto relative">
+    <div class="max-w-7xl mx-auto relative">
         <div class="grid grid-cols-1 pb-8 text-center justify-center items-center">
             <h3 class="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-medium text-white">{title}</h3>
             <p class="text-white/70 max-w-xl mx-auto">{description}</p>

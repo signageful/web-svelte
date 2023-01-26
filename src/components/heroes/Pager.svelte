@@ -4,7 +4,7 @@
 </script>
 
 <section class="relative table w-full py-32 lg:py-40 bg-primary-600 text-white">
-    <div class="max-w-6xl mx-auto relative">
+    <div class="max-w-7 mx-auto relative">
         <div class="grid grid-cols-1 text-center mt-10">
             <h3 class="text-3xl leading-normal font-semibold">
                 {title}

@@ -108,7 +108,7 @@
 
 <footer class="print:hidden sticky top-[100vh]">
     <div class="bg-dark relative overflow-hidden text-white font-mono text-xs antialiased pt-24 lg:pt-32 pb-16 px-8 lg:px-24">
-        <div class="max-w-6xl mx-auto flex flex-wrap justify-between pb-12 hover-within:underline-grow">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between pb-12 hover-within:underline-grow">
             {#each items as item}
                 <div class="w-1/2 pr-4 pb-12 lg:w-auto">
                     <h6 class="uppercase text-sm font-bold pb-4 relative">
@@ -126,7 +126,7 @@
                 </div>
             {/each}
         </div>
-        <div class="mx-auto max-w-6xl flex flex-wrap items-end justify-between">
+        <div class="mx-auto max-w-7xl flex flex-wrap items-end justify-between">
             <div />
             <p class="w-full pt-8 text-xs lg:w-auto lg:text-right">
                 &copy; {currentYear} teamspiel GmbH

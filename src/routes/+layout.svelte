@@ -1,7 +1,8 @@
 <script>
+  import 'virtual:fonts.css'
   import "../app.css";
+  import Header from "../components/header/Header.svelte";
   import Footer from "../components/Footer.svelte";
-  import Menu from "../components/Menu.svelte";
   import Winter from "../components/winter/Winter.svelte";
 
 
@@ -13,8 +14,7 @@
       isWinter = true;
     }
 </script>
-
-<Menu />
+<Header />
 <slot />
 <Footer />
 
