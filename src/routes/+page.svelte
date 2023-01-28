@@ -90,8 +90,8 @@
     </div>
     
 </section>
-<section class="flex flex-col relative w-full md:py-20 py-16 bg-slate-200 overflow-hidden">
-    <div class="max-w-7xl w-full mx-auto flex items-center px-4 ">
+<section class="flex flex-col relative w-full md:py-20 py-16 bg-slate-100 overflow-hidden">
+    <div class="max-w-7xl w-full mx-auto flex items-center px-4">
         <!-- benefits-->
         <div class="grid gap-6 grid-cols-1 md:grid-cols-2 w-full max-w-[78%]">
             {#each benefits as benefit }
