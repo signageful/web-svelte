@@ -58,12 +58,6 @@
         }
     };
 
-	const handleScroll = () => {
-		document.documentElement.scrollTop > 96
-			? navRef.classList.remove('at-top')
-			: document.documentElement.scrollTop < 64 && navRef.classList.add('at-top');
-	};
-
 	const handleScape = (e: KeyboardEvent) => {
 		if (e.key === 'Escape') {
 			showMenu = false;
@@ -81,7 +75,7 @@
     }
 </script>
 
-<svelte:window on:scroll={handleScroll} on:keyup={handleScape} />
+<svelte:window on:keyup={handleScape} />
 <div>
 	<header class="fixed z-10 left-0 top-0 right-0 bottom-auto border-b h-nav flex px-10 bg-white">
 		<div class="flex flex-row">

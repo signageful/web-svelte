@@ -1,6 +1,5 @@
 <script>
 	import Questionaire from '../components/heroes/Questionaire.svelte';
-	import Benefits from '../components/heroes/Benefits.svelte';
 	import billboardImg from '../assets/billboard.jpg';
 
     const benefits = [
