@@ -1,9 +1,10 @@
 <script lang="ts">
+    import { fade, slide } from 'svelte/transition';
 	import { navigating } from '$app/stores';
 	import Logo from '../logo/Logo.svelte';
 	import type { MenuItem } from './menu.types';
 	import Navitem from './Navitem.svelte';
-	import { Transition } from '@rgossiaux/svelte-headlessui';
+    import { browser } from '$app/environment';
 
 	const items: MenuItem[] = [
 		{
@@ -37,6 +38,25 @@
 	};
 
 	let navRef: HTMLElement;
+    let scrollTop: number | null = null;
+    let scrollLeft: number | null = null;
+
+    function disableScroll() {
+        if (browser) {
+            scrollTop = 
+                window.pageYOffset || window.document.documentElement.scrollTop;
+            scrollLeft = 
+                window.pageXOffset || window.document.documentElement.scrollLeft,
+                window.onscroll = function() {
+                window.scrollTo(scrollLeft!, scrollTop!);
+            }};
+        }
+    
+    function enableScroll() {
+        if (browser) {
+            window.onscroll = function() {};
+        }
+    };
 
 	const handleScroll = () => {
 		document.documentElement.scrollTop > 96
@@ -53,6 +73,12 @@
 	$: if ($navigating) {
 		showMenu = false;
 	}
+
+    $: if (showMenu) {
+        disableScroll();
+    } else {
+        enableScroll();
+    }
 </script>
 
 <svelte:window on:scroll={handleScroll} on:keyup={handleScape} />
@@ -115,59 +141,52 @@
 			>
 		</div>
 	</header>
-	<Transition
-		show={showMenu}
-		enter="transition-opacity duration-75"
-		enterFrom="opacity-0"
-		enterTo="opacity-100"
-		leave="transition-opacity duration-150"
-		leaveFrom="opacity-100"
-		leaveTo="opacity-0"
-	>
-		<div class="z-20 absolute inset-0 bg-white p-2 origin-top md:hidden">
-			<div class="bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
-				<div class="px-5 pt-4 flex items-center justify-between">
-					<div />
-					<div class="-mr-2">
-						<button
-							on:click={toggleNavbar}
-							type="button"
-							class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600"
-						>
-							<span class="sr-only">Close menu</span>
-							<!-- Heroicon name: outline/x -->
-							<svg
-								class="h-6 w-6"
-								xmlns="http://www.w3.org/2000/svg"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke="currentColor"
-								aria-hidden="true"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M6 18L18 6M6 6l12 12"
-								/>
-							</svg>
-						</button>
-					</div>
-				</div>
-				<div class="pt-5 pb-6">
-					<div class="px-2 space-y-1">
-						{#each items as item}
-							<Navitem {item} />
-						{/each}
-					</div>
-                    <div class="mt-6 px-5">
-                        <p class="text-center text-base font-medium text-gray-500">
-                            Existing customer?
-                            <a href="https://app.signageful.com" class="text-gray-900 hover:underline">Login</a>
-                        </p>
+
+    <div aria-modal="true">
+        <div class="absolute inset-0 overflow-hidden">
+            {#if showMenu}
+            <div
+                transition:fade
+                on:click={toggleNavbar}
+                class="z-10 absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+                aria-hidden="true"></div>
+            {/if}
+
+            <div class="z-10 fixed inset-y-0 right-0 max-w-full flex">
+                {#if showMenu}
+                    <div
+                        transition:slide
+                        class="w-screen max-w-md"
+                    >
+                        <div class="h-full flex flex-col py-6 bg-white shadow-xl overflow-y-scroll">
+                            <div class="px-4 sm:px-6">
+                                <div class="flex items-start justify-between">
+                                    <a href="/" title="Signageful" class="text-lg font-medium text-gray-900" id="slide-over-title">
+                                        <Logo />
+                                    </a>
+                                    <div class="ml-3 h-7 flex items-center">
+                                        <button type="button" class="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                           on:click={toggleNavbar}
+                                        >
+                                            <span class="sr-only">Close panel</span>
+                                            <svg class="h-6 w-6"
+                                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- content area-->
+                            <div class="mt-6 relative flex-1 px-4 sm:px-6 space-y-1">
+                                {#each items as item}
+                                    <Navitem {item} />
+                                {/each}
+                            </div>
+                        </div>
                     </div>
-				</div>
-			</div>
-		</div>
-	</Transition>
+                {/if}
+            </div>
+        </div>
+    </div>
 </div>
