@@ -9,8 +9,18 @@
 
 	const items: MenuItem[] = [
 		{
-			title: 'Plattform',
-			href: '/platform'
+			title: 'Produkt',
+			href: '/cloud',
+            children: [
+                {
+                    title: 'Cloud',
+                    href: '/cloud'
+                },
+                {
+                    title: 'Player',
+                    href: '/player'
+                },
+            ]
 		},
 		{
 			title: 'Lösungen',
