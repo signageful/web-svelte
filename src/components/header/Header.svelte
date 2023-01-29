@@ -93,18 +93,6 @@
 			<a href="/" title="Signageful" class="max-w-full flex items-center">
 				<Logo />
 			</a>
-			<div class="ml-2 hidden md:flex flex-row items-center">
-				<div class="h-[24px] w-[3px]">
-					<span class="bg-[#FF0000] h-1/3 w-full block" />
-					<span class="bg-black  h-1/3 w-full block" />
-					<span class="bg-[#FFCC00]  h-1/3 w-full block" />
-				</div>
-				<span class="uppercase text-xs ml-2">
-					made & hosted
-					<br />
-					in germany
-				</span>
-			</div>
 		</div>
 		<div class="flex flex-1 justify-end md:hidden">
 			<button
