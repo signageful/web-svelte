@@ -44,7 +44,7 @@
 
 <footer class="print:hidden sticky top-[100vh]">
     <Footer footerType="custom" customClass="top-[100vh]">
-        <div class="max-w-7xl mx-auto md:flex md:justify-between">
+        <div class="max-w-7xl mx-auto md:flex md:justify-between px-4">
             <div class="mb-6 md:mb-0">
                 <Logo className="h-12 w-full" />
             </div>
@@ -66,7 +66,7 @@
             </div>
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <div class="max-w-7xl mx-auto sm:flex sm:items-center sm:justify-between">
+        <div class="max-w-7xl mx-auto sm:flex sm:items-center sm:justify-between p-4">
              <FooterCopyright href="/" by="teamspiel GmbH" year={currentYear} />
             <FooterLinkGroup ulClass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
                 <FooterLink href="/terms-of-service">Terms of Service</FooterLink>
