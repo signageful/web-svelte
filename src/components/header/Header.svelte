@@ -5,6 +5,7 @@
 	import type { MenuItem } from './menu.types';
 	import Navitem from './Navitem.svelte';
     import { browser } from '$app/environment';
+	import MobileNavItem from './MobileNavItem.svelte';
 
 	const items: MenuItem[] = [
 		{
@@ -172,10 +173,13 @@
                                 </div>
                             </div>
                             <!-- content area-->
-                            <div class="mt-6 relative flex-1 px-4 sm:px-6 space-y-1">
+                            <div class="mt-6 relative flex-1 px-4 sm:px-6 space-y-2">
                                 {#each items as item}
-                                    <Navitem {item} />
+                                    <MobileNavItem {item} />
                                 {/each}
+                            </div>
+                            <div class="px-4 sm:px-6">
+                                <!-- space for login foo-->
                             </div>
                         </div>
                     </div>
