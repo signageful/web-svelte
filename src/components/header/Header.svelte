@@ -99,7 +99,7 @@
     >
         <NavBrand href="/">
             <Logo />
-            <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+            <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white hidden md:block">
                 Signageful
             </span>
         </NavBrand>

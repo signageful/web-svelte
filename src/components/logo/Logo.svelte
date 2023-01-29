@@ -1,4 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="w-full h-16 p-2" data-name="Ebene 2" viewBox="0 0 490.1 425.85">
+<script lang="ts">
+    export let className = 'w-full h-16 p-2';
+</script>
+
+<svg xmlns="http://www.w3.org/2000/svg" class={className} viewBox="0 0 490.1 425.85">
   <defs>
     <linearGradient id="a" x1="122.92" x2="367.96" y1="0" y2="424.42" data-name="Unbenannter Verlauf 325" gradientUnits="userSpaceOnUse">
       <stop offset=".2" stop-color="#3772b8"/>
