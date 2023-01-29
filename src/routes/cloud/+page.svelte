@@ -10,7 +10,7 @@
 	/>
 </svelte:head>
 <section
-	class="flex relative w-full mt-20 py-16 md:py-20  bg-primary-100  min-h-screen overflow-hidden"
+	class="flex relative w-full py-16 md:py-20  bg-primary-100  min-h-screen overflow-hidden"
 >
 	<div class="max-w-7xl w-full mx-auto flex items-center px-4">
 		<div class="grid w-full md:grid-cols-2 text-left">

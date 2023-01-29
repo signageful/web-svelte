@@ -3,7 +3,10 @@ const colors = require('tailwindcss/colors');
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	darkMode: 'class',
-	content: ['./src/**/*.{html,js,svelte,ts}'],
+	content: [
+        './src/**/*.{html,js,svelte,ts}',
+        "./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}",
+    ],
 	theme: {
 		fontFamily: {
 			sans: ['Questrial', 'sans-serif']
@@ -31,5 +34,5 @@ module.exports = {
 			}
 		}
 	},
-	plugins: [require('@tailwindcss/typography')]
+	plugins: [require('@tailwindcss/typography'), require('flowbite/plugin')]
 };

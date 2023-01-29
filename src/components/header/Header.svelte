@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { Navbar, NavBrand, NavUl, NavHamburger, Button } from 'flowbite-svelte'
     import { fade, slide } from 'svelte/transition';
 	import { navigating } from '$app/stores';
 	import Logo from '../logo/Logo.svelte';
@@ -8,23 +9,23 @@
 	import MobileNavItem from './MobileNavItem.svelte';
 
 	const items: MenuItem[] = [
-		{
-			title: 'Produkt',
-			href: '/cloud',
+        {
+            title: "Produkt",
+            href: "#",
             children: [
-                {
-                    title: 'Cloud',
-                    href: '/cloud'
+                 {
+                    title: "Cloud",
+                    href: "/cloud"
                 },
                 {
-                    title: 'Player',
-                    href: '/player'
+                    title: "Player",
+                    href: "/player"
                 },
             ]
-		},
+        },
 		{
 			title: 'Lösungen',
-			href: '/solutions',
+			href: '#',
 			children: [
 				{
 					title: 'Schule & Bildung',
@@ -87,54 +88,52 @@
 </script>
 
 <svelte:window on:keyup={handleScape} />
-<div>
-	<header class="fixed z-10 left-0 top-0 right-0 bottom-auto border-b h-nav flex px-10 bg-white">
-		<div class="flex flex-row">
-			<a href="/" title="Signageful" class="max-w-full flex items-center">
-				<Logo />
-			</a>
-		</div>
-		<div class="flex flex-1 justify-end md:hidden">
-			<button
-				type="button"
-				class="text-slate-900 hover:text-gray-400 focus:outline-none focus:text-gray-600"
-				on:click={toggleNavbar}
-			>
-				<span class="sr-only">Open main menu</span>
-				<!-- Heroicon name: outline/menu -->
-				<svg
-					class="h-6 w-6"
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke="currentColor"
-					aria-hidden="true"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width="2"
-						d="M4 6h16M4 12h16M4 18h16"
-					/>
-				</svg>
-			</button>
-		</div>
-		<!--  middle-container  -->
-		<div class="hidden whitespace-nowrap pl-4 md:flex">
-			{#each items as item}
-				<Navitem {item} />
-			{/each}
-		</div>
-		<!-- right container-->
-		<div class="hidden md:flex justify-end items-center flex-1 space-x-3">
-			<a
-				href="https://app.signageful.com"
-				title="Zum Login"
-				class="px-3 text-primary-600 font-semibold">Anmelden</a
-			>
-		</div>
-	</header>
+<header class="">
+    <!--
 
+        <nav class="fixed  left-0 top-0 right-0 bottom-auto border-b h-nav flex px-10 bg-white">
+    -->
+    <Navbar
+        navClass="px-2 sm:px-4 py-2.5  w-full z-20 top-0 left-0 border-b"
+        let:hidden
+    >
+        <NavBrand href="/">
+            <Logo />
+            <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+                Signageful
+            </span>
+        </NavBrand>
+        <div class="flex md:order-2">
+            <Button  href="https://app.signageful.com" size="sm">Get started</Button>
+            <NavHamburger on:click={toggleNavbar} />
+        </div>
+        <NavUl {hidden} class="order-1">
+            {#each items as item}
+                <Navitem {item} />
+            {/each}
+        </NavUl>
+        <!-- <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto">
+     
+            <div class="flex items-center md:order-2">
+                <a href="https://app.signageful.com" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Login</a>
+            
+                <button on:click={toggleNavbar} type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mega-menu-icons" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+                <ul class="flex flex-col mt-4 text-sm font-medium md:flex-row md:space-x-8 md:mt-0">
+                    {#each items as item}
+                        <li>
+                            <Navitem {item} />
+                        </li>
+                    {/each}
+                </ul>
+            </div>
+        </div> -->
+    </Navbar>
+    {#if showMenu} 
     <div aria-modal="true">
         <div class="absolute inset-0 overflow-hidden">
             {#if showMenu}
@@ -185,4 +184,5 @@
             </div>
         </div>
     </div>
-</div>
+    {/if}
+</header>

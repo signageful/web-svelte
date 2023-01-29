@@ -14,10 +14,11 @@
 	}
 </script>
 
-
+<div class="relative">
 <Header />
 <slot />
 <Footer />
+</div>
 
 {#if isWinter}
 	<Winter />
