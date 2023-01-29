@@ -1,6 +1,7 @@
 <script lang="ts">
     import { Navbar, NavBrand, NavUl, NavHamburger, Button } from 'flowbite-svelte'
     import { fade, slide } from 'svelte/transition';
+    import { createEventDispatcher } from "svelte";
 	import { navigating } from '$app/stores';
 	import Logo from '../logo/Logo.svelte';
 	import type { MenuItem } from './menu.types';
@@ -85,14 +86,87 @@
     } else {
         enableScroll();
     }
-</script>
 
-<svelte:window on:keyup={handleScape} />
+
+    /**
+     * Sticky Headroom magic area
+    */
+    const offset = 0;
+    const tolerance = 0;
+
+    let headerClass = "unfixed";
+    let lastHeaderClass = "unfixed";
+    let y = 0;
+    let lastY = 0;
+
+    const dispatch = createEventDispatcher();
+
+    function deriveClass(y = 0, scrolled = 0) {
+        if (y <= 100) return "unfixed";
+
+        if (y < offset) return "unfixed";
+        if (!scrolled || Math.abs(scrolled) < tolerance) return "unfixed";
+        
+        const dir = scrolled < 0 ? "down" : "up";
+        
+        // on the way to top
+        if (dir === "up") return "pinned";
+        // on the way to bottom
+        if (dir === "down") return "unpinned";
+        
+        return headerClass;
+    }
+
+    function updateClass(y = 0) {
+        const scrolledPxs = lastY - y;
+        const result = deriveClass(y, scrolledPxs);
+
+        lastY = y;
+
+        return result;
+    }
+
+    $: {
+        headerClass = updateClass(y);
+        if (headerClass !== lastHeaderClass) {
+            dispatch(headerClass);
+        }
+        lastHeaderClass = headerClass;
+    }
+</script>
+<style>
+    .headroom {
+        position: relative;
+        width: 100%;
+        transition: transform 300ms linear;
+        transition-duration: 300ms;
+    }
+
+    .headroom.pinned {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        transform: translateY(0);
+    }
+
+    .headroom.unpinned {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        transform: translateY(-100%);
+    }
+</style>
+<svelte:window on:keyup={handleScape} bind:scrollY={y} />
 <header class="">
     <!--
 
         <nav class="fixed  left-0 top-0 right-0 bottom-auto border-b h-nav flex px-10 bg-white">
     -->
+    <div class={`headroom ${headerClass || ''}`}>
     <Navbar
         navClass="px-2 sm:px-4 py-2.5  w-full z-20 top-0 left-0 border-b"
         let:hidden
@@ -113,6 +187,7 @@
             {/each}
         </NavUl>
     </Navbar>
+    </div>
     {#if showMenu} 
     <div aria-modal="true">
         <div class="absolute inset-0 overflow-hidden">
