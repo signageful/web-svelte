@@ -8,6 +8,10 @@
 
     export let data: BlogPost;
 </script>
+<svelte:head>
+    <title>{data.title}</title>
+    <meta name="description" content={data.description} />
+</svelte:head>
 
 <section class="relative py-16">
     <div class="relative px-4 sm:px-6 lg:px-8">
