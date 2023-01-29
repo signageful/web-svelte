@@ -1,16 +1,29 @@
 <script lang="ts">
 	export let title: string;
 	export let description: string;
+    export let slug: string;
+    export let heroImage: string | null | undefined = null;
 </script>
 
-<a href="#">
-	<div class="bg-white rounded-lg w-full">
-		<div>
-			<img src="https://picsum.photos/400/300" alt="" class="rounded-lg" />
-		</div>
-		<div class="p-4">
-			<h3 class="text-xl font-bold">{title}</h3>
-			<p class="text-gray-500">{description}</p>
-		</div>
-	</div>
+<a href={`/blog/${slug}`} class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+    {#if heroImage}
+        <div class="flex-shrink-0">
+			 <img class="h-48 w-full object-cover" src={heroImage} alt="">
+        </div>
+    {/if}
+    <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+        <div class="flex-1">
+            <p class="text-sm font-medium text-primary-600">
+              <span>
+                Article
+              </span>
+            </p>
+            <p class="text-xl font-semibold text-gray-900">
+                {title}
+            </p>
+            <p class="mt-3 text-base text-gray-500">
+                {description}
+            </p>
+        </div>
+    </div>
 </a>
