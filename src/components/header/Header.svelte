@@ -8,6 +8,7 @@
 	import Navitem from './Navitem.svelte';
     import { browser } from '$app/environment';
 	import MobileNavItem from './MobileNavItem.svelte';
+    import { trackLink } from 'svelte-segment-events';
 
 	const items: MenuItem[] = [
         {
@@ -212,7 +213,7 @@
                         <div class="h-full flex flex-col py-6 bg-white shadow-xl overflow-y-scroll">
                             <div class="px-4 sm:px-6">
                                 <div class="flex items-start justify-between">
-                                    <a href="/" title="Signageful" class="text-lg font-medium text-gray-900" id="slide-over-title">
+                                    <a use:trackLink="{{ event: 'Navigated to Home' }}" href="/" title="Signageful" class="text-lg font-medium text-gray-900" id="slide-over-title">
                                         <Logo />
                                     </a>
                                     <div class="ml-3 h-7 flex items-center">

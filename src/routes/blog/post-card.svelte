@@ -3,6 +3,8 @@
 	export let description: string;
     export let slug: string;
     export let heroImage: string | null | undefined = null;
+
+    import { trackLink } from 'svelte-segment-events';
 </script>
 
 <article class="pt-12 mb-12 md:pt-0 md:mb-0">
@@ -17,6 +19,7 @@
                 <a
                     href={`/blog/${slug}`}
                     class="no-underline text-current"
+                    use:trackLink="{{ event: `Navigated to Blog ${slug}` }}"
                 >
                     <div class="block text-xl leading-relaxed md:pt-16 pt-4 px-8 md:px-24">
                         <h6 class="text-sm font-medium text-primary-600">

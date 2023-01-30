@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 	import type { MenuItem } from './menu.types';
-
+    import { trackLink } from 'svelte-segment-events';
 	export let item: MenuItem;
 
     let isOpen = false
@@ -17,7 +17,7 @@
     <div transition:slide={{ duration: 300 }}>
         <div class="space-y-2 ml-2 mt-4">
             {#each item.children as child}
-            <a class="block font-sans text-slate-700 text-base font-normal no-underline py-1"
+            <a use:trackLink="{{ event: `Navigated to ${child.title}` }}" class="block font-sans text-slate-700 text-base font-normal no-underline py-1"
                 href="{child.href}"
             >
                 {child.title}
