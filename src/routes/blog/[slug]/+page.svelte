@@ -40,6 +40,11 @@
                 </span>
             </h1>
         </div>
+        {#if data.heroImage && data.heroImage.url}
+            <div class="flex box-border flex-row flex-wrap max-w-4xl w-full mx-auto py-16">
+                <img src={data.heroImage.url} alt={data.title} class="w-full object-contain rounded-md relative" />
+            </div>
+        {/if}
         <div class="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
             {@html data.body}
         </div>
