@@ -17,6 +17,7 @@
 <NavLi
     href={item.href}
     active={$page.url.pathname.startsWith(item.href)}
+    class="font-semibold"
 >
     {#if item.children}
         <Chevron aligned>
