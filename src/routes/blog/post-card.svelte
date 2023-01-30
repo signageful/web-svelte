@@ -18,7 +18,7 @@
                     href={`/blog/${slug}`}
                     class="no-underline text-current"
                 >
-                    <div class="block text-xl leading-relaxed md:pt-16 md:px-24">
+                    <div class="block text-xl leading-relaxed md:pt-16 pt-4 px-8 md:px-24">
                         <h6 class="text-sm font-medium text-primary-600">
                             Article
                         </h6>
