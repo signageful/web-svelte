@@ -42,8 +42,8 @@
 	let currentYear = new Date().getFullYear();
 </script>
 
-<footer class="print:hidden sticky top-[100vh]">
-    <Footer footerType="custom" customClass="top-[100vh]">
+<footer class="print:hidden sticky top-[100vh] pt-12">
+    <Footer footerType="custom" customClass="top-[100vh] pt-12">
         <div class="max-w-7xl mx-auto md:flex md:justify-between px-4">
             <div class="mb-6 md:mb-0">
                 <Logo className="h-12 w-full" />

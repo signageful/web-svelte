@@ -41,7 +41,11 @@
 					href: '/solutions-gastronomie'
 				}
 			]
-		}
+		},
+        {
+            title: "Blog",
+            href: "/blog"
+        }
 	];
 
 	let showMenu = false;
