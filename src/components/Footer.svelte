@@ -24,6 +24,10 @@
 					title: 'Player',
 					href: '/player'
 				},
+                {
+                    title: "Documentation",
+                    href: "https://docs.signageful.com",
+                }
 			]
 		},
         {
