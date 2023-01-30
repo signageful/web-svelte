@@ -1,16 +1,34 @@
 <script lang="ts">
+    import { serializeSchema } from './json-ld';
     type BlogPost = {
         title: string;
         description: string;
         body: string;
         content: string;
+        heroImage: {
+            url: string;
+        };
+        publishDate: string;
     }
 
     export let data: BlogPost;
+
+    const schema = {
+        '@context': 'https://schema.org',
+        '@type': 'NewsArticle',
+        "headline": data.title,
+        image: [
+            ...(data.heroImage ? [data.heroImage.url] : [])
+        ],
+        "datePublished": data.publishDate,
+    }
 </script>
 <svelte:head>
     <title>{data.title}</title>
     <meta name="description" content={data.description} />
+
+
+    {@html serializeSchema(schema)}
 </svelte:head>
 
 <section class="relative py-16">

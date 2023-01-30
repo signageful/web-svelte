@@ -11,6 +11,10 @@ const query = (slug: string) => `query {
       description
       body
       content { json }
+      heroImage {
+        url
+      }
+      publishDate
     }
   }
 }
