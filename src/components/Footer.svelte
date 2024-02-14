@@ -85,7 +85,7 @@
         </div>
         <hr class="my-6 border-primary-500 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div class="max-w-7xl mx-auto sm:flex sm:items-center sm:justify-between p-4">
-            <FooterCopyright aClass={aClass} spanClass="text-slate-100" href="/" by="teamspiel GmbH" year={currentYear} />
+            <FooterCopyright aClass={aClass} spanClass="text-slate-100" href="/" by="kikmedia.webdevelopment" year={currentYear} />
             <FooterLinkGroup ulClass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
                 <FooterLink aClass={aClass} href="/terms-of-service">Terms of Service</FooterLink>
                 <FooterLink aClass={aClass} href="/privacy">Privacy Policy</FooterLink>
