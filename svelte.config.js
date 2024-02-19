@@ -1,4 +1,5 @@
-import adapter from '@sveltejs/adapter-node';
+// import adapter from '@sveltejs/adapter-node';
+import adapter from '@sveltejs/adapter-netlify';
 //import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
@@ -10,7 +11,7 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-			out: 'build'
+			// out: 'build'
 		})
 	}
 };
