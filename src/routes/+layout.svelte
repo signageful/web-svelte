@@ -4,16 +4,6 @@
     import { page } from '$app/stores';
 	import Header from '../components/header/Header.svelte';
 	import Footer from '../components/Footer.svelte';
-	import Winter from '../components/winter/Winter.svelte';
-    import { SegmentInit } from 'svelte-segment-events';
-
-	export let isWinter = false;
-
-	// should render <Winter /> in Winter months
-	const month = new Date().getMonth();
-	if (month === 11 || month === 0 || month === 1) {
-		isWinter = true;
-	}
 
     // Track client-side navigation events
 	$: if (typeof window !== 'undefined' && window.analytics && $page.url) {
@@ -88,8 +78,5 @@
 <Footer />
 </div>
 
-{#if isWinter}
-	<Winter />
-{/if}
 
 <div id="consent"></div>
